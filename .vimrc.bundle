@@ -1,0 +1,57 @@
+" 去除VI一致性,必须要添加
+if &compatible
+  set nocompatible
+end
+
+" 必须
+filetype off
+
+" 设置包括vundle和初始化相关的runtime path
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" 让vundle管理插件版本,必须
+Bundle 'gmarik/vundle'
+
+" *******************************
+" Github上的插件i, 下面两种格式都可以使用
+" 旧格式为 Bundle '用户名/插件仓库名'
+" 格式为 Plugin '用户名/插件仓库名'
+
+"语法检查
+Bundle 'scrooloose/syntastic'
+
+"树型目录
+Bundle "scrooloose/nerdtree"
+Bundle "tomasr/molokai"
+
+"文档注释
+Bundle 'scrooloose/nerdcommenter'
+
+"编程提示
+Plugin 'davidhalter/jedi-vim'
+
+" 代码格式化
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+
+"自动文档注释
+Plugin 'heavenshell/vim-pydocstring'
+
+" 对齐线
+Plugin 'Yggdroot/indentLine'
+
+"代码补全
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+" Optional
+Plugin 'honza/vim-snippets'
+
+
+" 你的所有插件需要在下面这行之前
+if filereadable(expand("~/.vimrc.bundles.local"))
+  source ~/.vimrc.bundles.local
+endif
+
+filetype on
